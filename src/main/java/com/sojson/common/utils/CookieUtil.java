@@ -40,8 +40,9 @@ public class CookieUtil {
 			String value, int maxAge) {
 		try {
 			Cookie cookie = new Cookie(name, value);
-			if (maxAge > 0)
-				cookie.setMaxAge(maxAge);
+            if (maxAge > 0) {
+                cookie.setMaxAge(maxAge);
+            }
 			cookie.setPath("/");
 			response.addCookie(cookie);
 		} catch (Exception ex) {
