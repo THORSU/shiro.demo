@@ -6,7 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0fa96a9-4d5b-41db-9d6d-b4b31428348e" name="Default" comment="">
+    <list default="true" id="c0fa96a9-4d5b-41db-9d6d-b4b31428348e" name="Default" comment="修改java相关配置">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sojson/core/shiro/filter/KickoutSessionFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sojson/core/shiro/filter/KickoutSessionFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" afterDir="false" />
@@ -73,8 +73,8 @@
       <file leaf-file-name="CommonController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sojson/common/controller/CommonController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="77" column="40" selection-start-line="77" selection-start-column="40" selection-end-line="77" selection-end-column="40" />
+            <state relative-caret-position="485">
+              <caret line="81" column="92" lean-forward="true" selection-start-line="81" selection-start-column="92" selection-end-line="81" selection-end-column="92" />
             </state>
           </provider>
         </entry>
@@ -382,7 +382,7 @@
       <workItem from="1532595598949" duration="2190000" />
       <workItem from="1532651205570" duration="46000" />
       <workItem from="1532652468921" duration="1951000" />
-      <workItem from="1532654452905" duration="1008000" />
+      <workItem from="1532654452905" duration="1995000" />
     </task>
     <task id="LOCAL-00001" summary="修改java相关配置">
       <created>1532654500139</created>
@@ -398,11 +398,18 @@
       <option name="project" value="LOCAL" />
       <updated>1532655372013</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="修改java相关配置">
+      <created>1532655707251</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1532655707251</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35927000" />
+    <option name="totallyTimeSpent" value="36914000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -837,8 +844,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sojson/common/controller/CommonController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="77" column="40" selection-start-line="77" selection-start-column="40" selection-end-line="77" selection-end-column="40" />
+        <state relative-caret-position="485">
+          <caret line="81" column="92" lean-forward="true" selection-start-line="81" selection-start-column="92" selection-end-line="81" selection-end-column="92" />
         </state>
       </provider>
     </entry>
