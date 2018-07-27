@@ -1,5 +1,18 @@
 package com.sojson.core.shiro.filter;
 
+import com.sojson.common.utils.LoggerUtils;
+import com.sojson.core.shiro.cache.VCache;
+import com.sojson.core.shiro.session.ShiroSessionRepository;
+import com.sojson.core.shiro.token.manager.TokenManager;
+import net.sf.json.JSONObject;
+import org.apache.shiro.session.Session;
+import org.apache.shiro.subject.Subject;
+import org.apache.shiro.web.filter.AccessControlFilter;
+import org.apache.shiro.web.util.WebUtils;
+
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Serializable;
@@ -7,21 +20,8 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.http.HttpServletRequest;
+import static com.sojson.core.shiro.cache.VCache.setex;
 
-import net.sf.json.JSONObject;
-
-import org.apache.shiro.session.Session;
-import org.apache.shiro.subject.Subject;
-import org.apache.shiro.web.filter.AccessControlFilter;
-import org.apache.shiro.web.util.WebUtils;
-
-import com.sojson.common.utils.LoggerUtils;
-import com.sojson.core.shiro.cache.VCache;
-import com.sojson.core.shiro.session.ShiroSessionRepository;
-import com.sojson.core.shiro.token.manager.TokenManager;
 /**
  * 
  * 开发公司：SOJSON在线工具 <p>
@@ -98,7 +98,7 @@ public class KickoutSessionFilter extends AccessControlFilter {
 		//如果已经包含当前Session，并且是同一个用户，跳过。
 		if(infoMap.containsKey(userId) && infoMap.containsValue(sessionId)){
 			//更新存储到缓存1个小时（这个时间最好和session的有效期一致或者大于session的有效期）
-			cache.setex(ONLINE_USER, infoMap, 3600);
+            setex(ONLINE_USER, infoMap, 3600);
 			return Boolean.TRUE;
 		}
 		//如果用户相同，Session不相同，那么就要处理了
@@ -119,7 +119,7 @@ public class KickoutSessionFilter extends AccessControlFilter {
 				shiroSessionRepository.deleteSession(oldSessionId);
 				infoMap.remove(userId);
 				//存储到缓存1个小时（这个时间最好和session的有效期一致或者大于session的有效期）
-				cache.setex(ONLINE_USER, infoMap, 3600);
+                setex(ONLINE_USER, infoMap, 3600);
 			}
 			return  Boolean.TRUE;
 		}
@@ -127,7 +127,7 @@ public class KickoutSessionFilter extends AccessControlFilter {
 		if(!infoMap.containsKey(userId) && !infoMap.containsValue(sessionId)){
 			infoMap.put(userId, sessionId);
 			//存储到缓存1个小时（这个时间最好和session的有效期一致或者大于session的有效期）
-			cache.setex(ONLINE_USER, infoMap, 3600);
+            setex(ONLINE_USER, infoMap, 3600);
 		}
 		return Boolean.TRUE;
 	}
