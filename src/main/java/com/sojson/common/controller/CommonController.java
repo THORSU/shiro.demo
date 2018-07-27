@@ -1,22 +1,6 @@
 package com.sojson.common.controller;
 
 
-import java.util.Map;
-
-import javax.annotation.Resource;
-import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.util.UrlPathHelper;
-
 import com.sojson.common.utils.LoggerUtils;
 import com.sojson.common.utils.StringUtils;
 import com.sojson.common.utils.VerifyCodeUtils;
@@ -25,6 +9,20 @@ import com.sojson.common.utils.vcode.GifCaptcha;
 import com.sojson.common.utils.vcode.SpecCaptcha;
 import com.sojson.core.shiro.token.manager.TokenManager;
 import com.sojson.permission.service.RoleService;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.util.UrlPathHelper;
+
+import javax.annotation.Resource;
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.util.Map;
 
 @Controller
 @Scope(value="prototype")
@@ -92,7 +90,8 @@ public class CommonController extends BaseController {
 	@RequestMapping(value="getVCode",method=RequestMethod.GET)
 	public void getVCode(HttpServletResponse response,HttpServletRequest request){
 		try {
-			response.setHeader("Pragma", "No-cache");  
+			response.setHeader("Pragma", "No-cache");
+
 	        response.setHeader("Cache-Control", "no-cache");  
 	        response.setDateHeader("Expires", 0);  
 	        response.setContentType("image/jpg");  
